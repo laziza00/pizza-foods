@@ -20,7 +20,7 @@ body {
 }
 .container {
   padding: 30px 0;
-  width: 900px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .pizza {
@@ -56,6 +56,9 @@ body {
 .pizza__list {
   list-style-type: none;
 }
+.cart__list {
+  list-style-type: none;
+}
 .pizza__item {
   position: relative;
   background-color: rgb(243, 229, 147);
@@ -64,6 +67,16 @@ body {
   display: flex;
   width: 100%;
   margin: 0 0 30px 0;
+}
+.cart__item {
+  position: relative;
+  background-color: rgb(243, 229, 147);
+  padding: 60px 20px;
+  border-radius: 20px;
+  display: flex;
+  width: 100%;
+  margin: 0 0 30px 0;
+  animation: pizza-anim 0.4s ease;
 }
 .pizza__img-box {
   position: absolute;
@@ -127,9 +140,9 @@ body {
   font-size: 20px;
 }
 .pizza__list-cart {
-  position: absolute;
-  bottom: 0;
-  right:0;
+  position: fixed;
+  bottom: 18px;
+  right: 278px;
   padding: 15px;
   width: 381px;
   background-color: rgb(243, 229, 147);
@@ -155,11 +168,75 @@ body {
 }
 
 
+@keyframes pizza-anim {
+   100% {
+     transform: rotateY(-10px);
+   }
+}
 
-
-/* @media screen and (max-width:992px ) {
-    
+@media screen and (max-width:992px ) {
+  
+  .pizza {
+    justify-content: center;
+  }
   .pizza__select {
     width: 300px;
+    margin: 0 20px;
   }
-} */
+  .pizza__list-cart {
+    position: fixed;
+    bottom: 30px;
+    right: 131px;
+    padding: 15px;
+    width: 298px;
+
+  } 
+  .pizza__title {
+    margin: 0 0 40px 0;
+  }
+  .pizza__img {
+    width: 70px;
+    height: 70px;
+  }
+  .pizza__btn {
+    padding: 2px 10px;
+  }
+  .pizza__item {
+    padding: 45px 20px;
+    margin: 0 auto 30px auto;
+  }
+  .pizza__remove-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    /* background-color: red; */
+  }
+}
+
+
+@media screen and (max-width:768px ) {
+  
+  .pizza {
+    width: 100%;
+    flex-direction: column !important;
+    margin: 0 auto;
+    justify-content: center !important;
+  }
+  .pizza__select {
+    margin: 0 auto 30px auto;
+  }
+  .pizza__list-cart {
+    position: fixed;
+    bottom: 58px;
+    right: 48px;
+    padding: 15px;
+    width: 298px;
+
+  } 
+  .pizza__remove-btn {
+    position: absolute;
+    bottom: -500px;
+    right: 40px;
+    /* background-color: red; */
+  }
+}
