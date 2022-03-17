@@ -81,36 +81,37 @@ function workId(id) {
     }
 
     arrSort (newArr);
-    // for (let i = 0; i < newArr.length; i++) {
+    
+    for (let i = 0; i < newArr.length; i++) {
 
-    //     if (i==newArr.length - 1){
+        if (i==newArr.length - 1){
                
-    //         let li = document.createElement("li");
+            let li = document.createElement("li");
 
-    //         li.className = "pizza__item"
-    //         li.innerHTML = `
-    //             <div class="pizza__img-box">
-    //             <img class="pizza__img" src="${newArr[i].imgurl}" alt="img">
-    //             </div>
-    //             <div class="pizza__item-box">
-    //                 <h3 class="pizza__item-title">${newArr[i].name}</h3>
-    //                 <p class="pizza__item-price">$${newArr[i].price}</p>
-    //                 <button  class="pizza__remove-btn pizza__btn" onclick='removeItem(${i})'>-</button>
-    //             </div>
-    //             `;
+            li.className = "pizza__item"
+            li.innerHTML = `
+                <div class="pizza__img-box">
+                <img class="pizza__img" src="${newArr[i].imgurl}" alt="img">
+                </div>
+                <div class="pizza__item-box">
+                    <h3 class="pizza__item-title">${newArr[i].name}</h3>
+                    <p class="pizza__item-price">$${newArr[i].price}</p>
+                    <button  class="pizza__remove-btn pizza__btn" onclick='removeItem(${i})'>-</button>
+                </div>
+                `;
 
-    //             subtitle += newArr[i].price;
-    //             tax1 = subtitle*0.1;
-    //             total1 = subtitle + tax1
+                subtitle += newArr[i].price;
+                tax1 = subtitle*0.1;
+                total1 = subtitle + tax1
 
-    //              list2.appendChild(li);
+                 list2.appendChild(li);
 
-    //              subtotal.innerHTML=`${subtitle}$`;
-    //              tax.innerHTML=`${tax1}$`;
-    //              total.innerHTML=`${total1}$`
-    //         }
+                 subtotal.innerHTML=`${subtitle}$`;
+                 tax.innerHTML=`${tax1}$`;
+                 total.innerHTML=`${total1}$`
+            }
 
-    //         }
+            }
 }
 
 
@@ -139,46 +140,66 @@ function arrSort (hhh) {
 
 
 
-// function removeItem(index) {
+function removeItem(index) {
 
-//     let newArrRemove =[]
+    let newArrRemove =[]
 
-//     for (let i=0; i<newArr.length; i++) {
-//         if(index!= i) {
-//             newArrRemove.push(newArr[i])
-//         }
-//     }
+    for (let i=0; i<newArr.length; i++) {
+        if(index!= i) {
+            newArrRemove.push(newArr[i])
+        }
+    }
   
-//     newArr = newArrRemove;
+    newArr = newArrRemove;
 
-//     list2.innerHTML ="";
-//     subtitle = 0;
-//     tax1 = 0;
-//     total1 = 0
+    list2.innerHTML ="";
+    subtitle = 0;
+    tax1 = 0;
+    total1 = 0
 
 
 
-//     for (let i=0; i<newArr.length; i++) {
+    for (let i=0; i<newArr.length; i++) {
 
-//         let li = document.createElement('li');
+        let li = document.createElement('li');
 
-//         li.className= "pizza__item cart__item";
-//         li.innerHTML =`
+        li.className= "pizza__item cart__item";
+        li.innerHTML =`
         
-//         <div class="pizza__img-box">
-//         <img class="pizza__img" src="${newArr[i].imgurl}" alt="img">
-//         </div>
-//         <div class="pizza__item-box">
-//           <h3 class="pizza__item-title">${newArr[i].name}</h3>
-//           <p class="pizza__item-price">$${newArr[i].price}</p>
-//           <button class="pizza__remove-btn" id="remove-btn" onclick="removeItem(${i})">-</button>
-//         </div>`;
-//         subtitle += newArr[i].price;
-//         tax1 = subtitle*0.1;
-//         total1 = subtitle + tax1
-//         list2.appendChild(li);
-//     }
+        <div class="pizza__img-box">
+        <img class="pizza__img" src="${newArr[i].imgurl}" alt="img">
+        </div>
+        <div class="pizza__item-box">
+          <h3 class="pizza__item-title">${newArr[i].name}</h3>
+          <p class="pizza__item-price">$${newArr[i].price}</p>
+          <button class="pizza__remove-btn" id="remove-btn" onclick="removeItem(${i})">-</button>
+        </div>`;
 
-// }
+
+
+        subtitle += newArr[i].price;
+        tax1 = subtitle*0.1;
+        total1 = subtitle + tax1
+
+        subtotal.innerHTML =` ${subtitle} $`;
+        tax.innerHTML =` ${tax1}$`;
+        total.innerHTML = ` ${total1} $`;
+
+        list2.appendChild(li);
+    }
+
+
+
+    if (newArr.length == 0) {
+        subtitle = 0;
+        tax1 = 0;
+        total1 = 0;
+        subtotal.innerHTML =` ${subtitle} $`;
+        tax.innerHTML =` ${tax1}$`;
+        total.innerHTML = ` ${total1} $`;
+    } 
+
+
+}
 
 
