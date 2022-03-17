@@ -216,6 +216,7 @@ body {
 
 @media screen and (max-width:768px ) {
   
+
   .pizza {
     width: 100%;
     flex-direction: column !important;
@@ -233,6 +234,9 @@ body {
     width: 298px;
 
   } 
+  .pizza__item {
+    margin: 0 auto 40px auto;
+  }
   .pizza__remove-btn {
     position: absolute;
     bottom: -500px;
