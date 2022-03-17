@@ -6,12 +6,58 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
   <link rel="stylesheet" href="css/col.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <div class="container">
+  <div class="pizza">
+    <div class="pizza__select">
+        <h1 class="pizza__title">to go menu</h1>
+        <ul class="pizza__list" id="list">
+
+        </ul>
+    </div>
+    <div class="pizza__select pizza__ouput">
+      <div>
+        <h1 class="pizza__title">Your Cart</h1>
+        <ul class="pizza__list" id="listcart">
+          <li class="pizza__item">
+            <div class="pizza__img-box">
+            <img class="pizza__img" src="https://quizzical-murdock-fa5953.netlify.app/img/pizza2.jpg" alt="img">
+            </div>
+            <div class="pizza__item-box">
+              <h3 class="pizza__item-title">paperonni</h3>
+              <p class="pizza__item-price">$2.23</p>
+              <button class="pizza__remove-btn" id="remove-btn"><i class='bx bx-minus'></i></button>
+            </div>
+          </li>
+          
+        </ul>
+        <ul class="pizza__list-cart">
+          <li class="pizza__item-cart">
+            <p class="pizza__sub">subtotal:</p>
+            <p class="pizza__sub-price" id="subtotal">0$</p>
+          </li>
+          <li class="pizza__item-cart">
+            <p class="pizza__sub">tax:</p>
+            <p class="pizza__sub-price" id="tax">0$</p>
+          </li>
+          <li class="pizza__item-cart">
+            <p class="pizza__sub">total:</p>
+            <p class="pizza__sub-price" id="total">0$</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
 
   <script src="js/main.js"></script>
 </body>
