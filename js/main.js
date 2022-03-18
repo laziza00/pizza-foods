@@ -50,7 +50,7 @@ for (let i=0; i<arr.length; i++) {
     <div class="pizza__item-box">
     <h3 class = 'pizza__item-title'> ${arr[i].name}</h2>
     <p class="pizza__item-price">$ ${arr[i].price}</p>
-    <button class="pizza__btn" onclick = "workId(${arr[i].id})">Add to Cart </button>
+    <button class="pizza__btn" onclick = "addItem(${arr[i].id})">Add to Cart </button>
     </div>
  `;
 
@@ -69,7 +69,7 @@ let total1 = 0
 
 count =arr.length
 
-function workId(id) {
+function addItem(id) {
 
     for (let i = 0; i < arr.length; i++) {
    
@@ -88,15 +88,23 @@ function workId(id) {
                
             let li = document.createElement("li");
 
-            li.className = "pizza__item"
+            li.className = "pizza__item cart__item"
             li.innerHTML = `
                 <div class="pizza__img-box">
                 <img class="pizza__img" src="${newArr[i].imgurl}" alt="img">
                 </div>
                 <div class="pizza__item-box">
-                    <h3 class="pizza__item-title">${newArr[i].name}</h3>
-                    <p class="pizza__item-price">$${newArr[i].price}</p>
-                    <button  class="pizza__remove-btn pizza__btn" onclick='removeItem(${i})'>-</button>
+                    <div>  
+                            <h3 class="pizza__item-title">${newArr[i].name}</h3>
+                            <p class="pizza__item-price">$${newArr[i].price}</p>
+                     </div>
+                    <button  class="pizza__remove-btn count__btn" onclick=''>${count}</button>
+
+                    <div class="pizza__cart-btns" style =""> 
+                    <button  class=" pizza__remove-btn" onclick=''>+</button>
+                    <button  class="pizza__remove-btn " onclick='removeItem(${i})'>-</button>
+                    </div>
+                    
                 </div>
                 `;
 
@@ -166,13 +174,20 @@ function removeItem(index) {
         li.className= "pizza__item cart__item";
         li.innerHTML =`
         
-        <div class="pizza__img-box">
-        <img class="pizza__img" src="${newArr[i].imgurl}" alt="img">
-        </div>
-        <div class="pizza__item-box">
-          <h3 class="pizza__item-title">${newArr[i].name}</h3>
-          <p class="pizza__item-price">$${newArr[i].price}</p>
+            <div class="pizza__img-box">
+            <img class="pizza__img" src="${newArr[i].imgurl}" alt="img">
+            </div>
+            <div class="pizza__item-box">
+            <div>
+            <h3 class="pizza__item-title">${newArr[i].name}</h3>
+            <p class="pizza__item-price">$${newArr[i].price}</p>
+            </div>
+          <button  class="pizza__remove-btn count__btn" onclick=''>${count}</button>
+          <div class="pizza__cart-btns" > 
+          <button  class=" pizza__remove-btn" onclick=''>+</button>
           <button class="pizza__remove-btn" id="remove-btn" onclick="removeItem(${i})">-</button>
+          </div>
+        
         </div>`;
 
 
