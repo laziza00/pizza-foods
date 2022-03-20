@@ -148,6 +148,8 @@ function sortItem () {
     list2.innerHTML = '';
 
     let  subtitle =0;
+    let eltax1 = 0
+    let eltotal1 = 0
 
     for (let i=0; i<newArr.length; i++){
         let li = document.createElement('li');
@@ -174,18 +176,19 @@ function sortItem () {
 
              subtitle += newArr[i].count* newArr[i].price;
              list2.appendChild(li)
+            eltax1 = subtitle *0.1;
+            eltotal1 = eltax1 + subtitle;
 
     }
-
+    subtotal.innerHTML=`${subtitle}$`;
+    tax.innerHTML=`${eltax1}$`;
+    total.innerHTML=`${eltotal1}$`
 }
 
 
-let tax1 = subtitle *0.1;
-let total1 = tax1 + subtitle;
 
-subtotal.innerHTML=`${subtitle}$`;
-tax.innerHTML=`${tax1}$`;
-total.innerHTML=`${total1}$`
+
+
 
 
 function addButton(index) {
